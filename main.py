@@ -10,6 +10,7 @@ class Player(Model):
     is_deleted = BooleanField(default=False)
     class Meta:
         database = db
+        table_name = 'players'
 
 class Game(Model):
     name = CharField()
@@ -19,6 +20,8 @@ class Game(Model):
     win_type = CharField()
     class Meta:
         Database = db
+        table_name = 'games'
 
 db.connect()
 db.create_tables([Player, Game])
+db.close()
